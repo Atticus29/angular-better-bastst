@@ -21,10 +21,11 @@ export class ClaimComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
-      console.log(urlParameters)
       this.claimId = urlParameters['claimId']
     })
     this.claimToDisplay = this.claimService.getClaimById(this.claimId)
+    console.log(this.claimToDisplay)
+
   }
 
 }
