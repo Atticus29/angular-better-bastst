@@ -19,7 +19,7 @@ export class ClaimsListComponent implements OnInit {
     this.claims = this.claimService.getClaims()
   }
 
-  goToClaimDetailPage(clickedClaim: any){
+  goToClaimDetailPage(clickedClaim){
     this.router.navigate(['claim', clickedClaim.$key]);
   }
 
