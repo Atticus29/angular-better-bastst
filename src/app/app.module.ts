@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router'
 
 import { AppComponent } from './app.component';
 
@@ -9,6 +10,8 @@ import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { ClaimsListComponent } from './claims-list/claims-list.component';
+import { ClaimComponent } from './claim/claim.component';
+import { routing } from './app.routing';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -21,14 +24,17 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    ClaimsListComponent
+    ClaimsListComponent,
+    ClaimComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    RouterModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]

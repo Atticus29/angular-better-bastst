@@ -12,4 +12,8 @@ export class ClaimService {
     return this.claims
   }
 
+  getClaimById(claimId: string) {
+    return this.database.object('claims/'+claimId)
+  }
+
 }

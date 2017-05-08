@@ -1,2 +1,4 @@
   <h1>HIIII</h1>
-  <h1 *ngFor="let claim of claims | async">{{claim.assertion}}</h1>
+  <ul>
+    <li *ngFor="let claim of claims | async" (click)="goToClaimDetailPage(claim)">{{claim.assertion}}</li>
+  </ul>
